@@ -13,3 +13,5 @@ if __name__ == "__main__":
     image_directory = "/Users/take/Pictures/flickr/"
     imgs = Images(image_directory)
     imgs.disp_info()
+    
+    imgs.copy_files_to_dist_dir()
