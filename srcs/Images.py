@@ -55,7 +55,7 @@ class Images():
                     #サイズが異なる場合、別名で保存する.
                     #TODO コピー後のファイルもチェックする必要あり
                     name_no_ext,ext = os.path.splitext(dist_name)            
-                    dist_name = name_no_ext + "(copy)" + ext
+                    dist_name = name_no_ext + "(2)" + ext
 
             try:
                 shutil.copy2(name,dist_name)
