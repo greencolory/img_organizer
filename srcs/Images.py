@@ -10,6 +10,7 @@ import os
 import shutil
 from tqdm import tqdm
 from datetime import datetime
+import re
 
 class Images():
     def __init__(self,image_directory_full_path,dist_root_dir):
@@ -128,7 +129,8 @@ class Images():
         print(self.copy_file_num,"Files Finished")
         
     def write_log_file(self):
-        log_filename = "log_" + datetime.now().isoformat() + ".txt"
+        log_filename = re.sub("¥/|:","-","log_" + datetime.now().isoformat() + ".txt")
+        
         fout = open(self.src_dir+log_filename,"wt")
         print("Result Summary----------------------------------",file=fout)
         print("Summary",file=fout)
