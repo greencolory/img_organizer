@@ -9,6 +9,8 @@ from ExifInfo import ExifInfo
 import os
 import shutil
 from tqdm import tqdm
+from datetime import datetime
+
 class Images():
     def __init__(self,image_directory_full_path,dist_root_dir):
         #️画像があるディレクトリを受け取って画像を検索して画像ファイル名リストを作成する
@@ -126,7 +128,8 @@ class Images():
         print(self.copy_file_num,"Files Finished")
         
     def write_log_file(self):
-        fout = open(self.src_dir+"log.txt","wt")
+        log_filename = "log_" + datetime.now().isoformat() + ".txt"
+        fout = open(self.src_dir+log_filename,"wt")
         print("Result Summary----------------------------------",file=fout)
         print("Summary",file=fout)
         print("Target Files         :",self.input_file_num,file=fout)
